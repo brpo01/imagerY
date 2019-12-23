@@ -1,0 +1,85 @@
+<section class="image_area">
+    <header>
+        {{image.title}}
+    </header>
+    <div>
+        <p>{{image.description}}</p>
+        <img src="/public/upload/{{image.filename}}" class= 'img-thumbnail'>
+        <hr>
+        <hr>
+        <div class="row">
+            <div class="col-md-8">
+                <button class="btn btn-success" id="btn-like" data-id="{{image.uniqueId}}">Like</button>&nbsp;<strong class="likes-count">
+                    {{image.likes}}</strong>&nbsp;&nbsp;Views:&nbsp;<strong>{{image.views}}</strong>&nbsp;&nbsp;Posted:&nbsp;{{timeago image.timestamp}}
+            </div>
+            <div class="col-md-4 text-right">
+                <button class="btn btn-danger" id="btn-delete" data-id="{{image.uniqueId}}" data-user-id="{{image.user_id}}" disabled>Delete</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <form method = "post" action = "/image/{{image.uniqueId}}/comment"  class="form-horizontal" role="form">
+                    <div class="row">
+                        
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="comment" id= "comment" placeholder="Comment"></textarea>
+                            </div>
+                       
+                        
+                        
+                            <div class="col-sm-2" style="padding:0;">
+                                <button type="submit" class="btn btn-success btn-lg" id="btn-submit-comment" disabled> <i class="fa fa-comment"> Post</i></button>
+                            </div>
+                        
+                    </div>
+                </form>
+                {{#if comments}}
+                <ul class="media-list">
+                    {{#each comments}}
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                        <img class="media-object img-circle" src="https://www.gravatar.com/avatar/{{gravatar}}/?d=wavatar&s=45" id="_id">
+                        </a>
+                        <div class="media-body">
+                            {{comment}} <br/>
+                            <strong class="media-heading">{{name}}</strong> <small>{{timeago image.timestamp}}</small>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{else}}
+            <p class="text-muted">Comments will show up here</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{!-- <section class="comment_area">
+
+    <div>
+        
+        
+    </div>
+</section> --}}
+
+{{!-- Modal --}}
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Delete Image</h4>
+      </div>
+      <div class="modal-body" class="text-center">
+        <p>Are you sure you want to delete {{ image.title }}?</p> 
+        <img src="/public/upload/{{image.filename}}"  class="img-thumbnail">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn-modal-yes">Delete</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

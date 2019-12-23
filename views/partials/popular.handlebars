@@ -1,0 +1,20 @@
+<section class="popular_images_area">
+     <header>
+        Popular Image
+    </header>
+    <div class="row">
+        {{#if sidebar.popular}}
+            {{#each sidebar.popular}}
+            <a href="/image/{{uniqueId}}">
+                <div class="col-md-4">
+                    <img src="/public/upload/{{filename}}" class="img-thumbnail" style="width:100%; height:100px; margin-bottom:5px">
+                </div>
+            </a>
+            {{/each}}
+        {{else}}
+            <div class="col-md-12">
+                <p class="text-muted">Popular Images will show up here</p>
+            </div>
+        {{/if}}
+    </div>
+</section>

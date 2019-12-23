@@ -1,0 +1,80 @@
+<section class="col-md-7" style="margin-top: 95px;">
+    <h1 style="font-family:Verdana, Geneva, Tahoma, sans-serif; margin-left:50px">Welcome to imagerY</h1>
+    <img src="/public/images/background-image.png" alt="">
+</section>
+
+<section class="col-md-4 login_area">
+    <form method = "post" action="/login">
+        {{#if loginError}}
+            <p class="alert alert-danger">{{loginError}}</p>
+        {{/if}}
+        <div class="form-group" for="email">
+            <label class="control-label">Email</label>
+            <input type="email" name="email" placeholder="Email" id="email" class='form-control'>
+        </div>
+         <div class="form-group" for="password">
+            <label class="control-label">Password</label>
+            <input type="password" name="password" placeholder="Password" id="password" class="form-control">
+        </div>
+         <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-block">Log In</button>
+        </div>
+        <div class="col-md-12 text-center">
+            <a href="#">Forgotten Account?</a>
+        </div>
+        <hr>
+        <div class="form-group text-center">
+            <button type="button" class="btn btn-success btn-block" id="btn-createAccount">Create Account</button>
+        </div>
+    </form>
+</section>
+
+<div class="modal fade" id="createAccountModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Sign Up</h4>
+        <p>It is fast & easy</p>
+      </div>
+      <div class="modal-body" class="text-center">
+         <form method="post" action="" id="createAccountForm">
+            <div class="row">
+                <div class="form-group col-md-6" for="firstname">
+                    <label class="control-label">FirstName</label>
+                    <input type="text" name="firstname" placeholder="FirstName" id="firstname" class='form-control' required>
+                    <ul id="firstname-help-block"></ul>
+                </div>
+                <div class="form-group col-md-6" for="lastname">
+                    <label class="control-label">LastName</label>
+                    <input type="text" name="lastname" placeholder="LastName" id="lastname" class="form-control" required>
+                    <ul id="lastname-help-block"></ul>
+                </div>
+            </div>
+            <div class="form-group" for="signupemail">
+                <label class="control-label">Email</label>
+                <input type="email" name="email" placeholder="Email" id="signupemail" class="form-control" required>
+                <ul id="email-help-block"></ul>
+            </div>
+            <div class="form-group" for="signuppassword">
+                <label class="control-label">Password</label>
+                <input type="password" name="password" placeholder="Password" id="signuppassword" class="form-control" required>
+                <ul id="password-help-block"></ul>
+            </div>
+            <div class="form-group" for="confirmpassword">
+                <label class="control-label">Confirm Password</label>
+                <input type="password" name="confirmpassword" placeholder="Confirm Password" id="confirmpassword" class="form-control" required>
+                <ul id="confirmpassword-help-block"></ul>
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-primary btn-success">Sign Up</button>
+            </div>
+            {{!-- <div class="col-md-12 text-center">
+                <a href="#">Forgotten Account?</a>
+            </div> --}}
+            <hr>
+        </form>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

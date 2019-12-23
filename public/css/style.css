@@ -1,0 +1,94 @@
+body{
+    background: #e8effc;
+}
+
+.custom-nav{
+    background: royalblue;
+    border:0px;
+    border-radius:0px;
+}
+
+.custom-nav .navbar-brand{
+    color:#fff;
+}
+
+.custom-nav .navbar-brand:hover,
+.custom-nav .navbar-brand:focus{
+    color:#eee;
+}
+
+.custom-nav .navbar-nav > li > a{
+    color:#fff;
+}
+
+.custom-nav .navbar-nav > li > a:hover,
+.custom-nav .navbar-nav > li > a:focus{
+    color:#eee;
+    background-color: transparent;
+}
+
+.upload_area{
+    padding-bottom: 5px;
+}
+
+.upload_area form{
+    margin-right: 15px;
+}
+
+.upload_area, .newest_images_area, .stats_area, .popular_images_area, .latest_comments_area, .image_area, .comment_area{
+    background: #fff;
+    min-height: 35vh; 
+    margin-bottom: 5vh;
+}
+
+
+.image_area img{
+    min-height:300px;
+    width:100%;
+}
+
+.image_area > div{
+    padding:5px 15px;
+}
+
+header + div{
+    padding:5px 15px;
+}
+
+.stats_area, .popular_images_area, .latest_comments_area{
+    margin-bottom: 5vh;
+    min-height: 22vh;
+}
+
+.comment_area{
+    min-height: 5vh;
+}
+
+.login_area form{
+    background: #fff;
+    margin:60px 0px 160px 10px;
+    padding:20px;
+}
+
+header{
+    background: royalblue;
+    padding:10px;
+    color:#fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#firstname-help-block, #lastname-help-block, #email-help-block, #password-help-block, #confirmpassword-help-block{
+    color: red !important
+}
+
+footer{
+    background: royalblue;
+    color: #fff;
+    font-weight: bold;
+    min-height: 7vh;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
